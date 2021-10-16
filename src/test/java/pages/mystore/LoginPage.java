@@ -1,6 +1,5 @@
 package pages.mystore;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,7 +15,7 @@ public class LoginPage {
     @FindBy(name = "password")
     private WebElement passwordInput;
 
-    @FindBy(id = "submit-login")
+    //@FindBy(id = "submit-login")
     private WebElement signInButton;
 
     public LoginPage(WebDriver driver) {

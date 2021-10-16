@@ -1,5 +1,6 @@
 package wyklad.mystore;
 
+import common.Utils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,12 +21,7 @@ public class LoginTest {
     @BeforeEach
     //@Before - Junit 4
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver",
-                "src/main/resources/drivers/chromedriver.exe");
-
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver = Utils.setUpDriver();
     }
 
     @Test
