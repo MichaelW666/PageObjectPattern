@@ -8,10 +8,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.hotel.AuthenticationPage;
 import pages.hotel.RegistrationInfoPage;
+import pages.hotel.RoomsPage;
 import pages.hotel.sections.HeaderSection;
 import pages.hotel.sections.SearchBar;
 
-public class SearchHotelTest {
+public class ReserveHotelTest {
 
     WebDriver driver;
 
@@ -30,17 +31,22 @@ public class SearchHotelTest {
         String hotelName = "The Hotel Prime";
         String checkInDate = "18-10-2021";
         String checkOutDate = "24-10-2021";
+        String roomName = "General Rooms";
+        String roomQuantity = "2";
 
         AuthenticationPage authenticationPage = new AuthenticationPage(driver);
         HeaderSection headerSection = new HeaderSection(driver);
         SearchBar searchBar = new SearchBar(driver);
+        RoomsPage roomsPage = new RoomsPage(driver);
 
         // act
         headerSection.goToAuthentication();
         authenticationPage.loginAs(email, password);
         headerSection.clickLogo();
         searchBar.searchHotel(hotelLocation, hotelName, checkInDate, checkOutDate);
-        // assert
+        roomsPage.bookRoom(roomName, roomQuantity);
 
+        // assert
+        // zrobic asercje sprawdzajace poprawnosc koszyka
     }
 }
