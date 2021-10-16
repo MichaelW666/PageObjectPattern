@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import pages.hotel.AuthenticationPage;
 import pages.hotel.RegistrationInfoPage;
 import pages.hotel.sections.HeaderSection;
+import pages.hotel.sections.SearchBar;
 
 public class SearchHotelTest {
 
@@ -25,15 +26,20 @@ public class SearchHotelTest {
         // arrange
         String email = "johndoe@mail.com";
         String password = "qwerty";
+        String hotelLocation = "Cracow";
+        String hotelName = "The Hotel Prime";
+        String checkInDate = "18-10-2021";
+        String checkOutDate = "24-10-2021";
 
         AuthenticationPage authenticationPage = new AuthenticationPage(driver);
         HeaderSection headerSection = new HeaderSection(driver);
+        SearchBar searchBar = new SearchBar(driver);
 
         // act
         headerSection.goToAuthentication();
         authenticationPage.loginAs(email, password);
         headerSection.clickLogo();
-
+        searchBar.searchHotel(hotelLocation, hotelName, checkInDate, checkOutDate);
         // assert
 
     }
