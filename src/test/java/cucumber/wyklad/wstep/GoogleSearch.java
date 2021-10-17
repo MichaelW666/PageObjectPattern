@@ -1,4 +1,4 @@
-package cucumber.wyklad;
+package cucumber.wyklad.wstep;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

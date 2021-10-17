@@ -1,4 +1,4 @@
-package cucumber.wyklad;
+package cucumber.wyklad.wstep;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

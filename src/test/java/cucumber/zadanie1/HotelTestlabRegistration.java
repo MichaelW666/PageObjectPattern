@@ -19,8 +19,25 @@ public class HotelTestlabRegistration {
 
     private WebDriver driver;
 
-    @Before
-    public void setupDriver() {
+//    @Before
+//    public void setupDriver() {
+//        // Skonfiguruj sterownik przeglądarki
+//        System.setProperty("webdriver.chrome.driver",
+//                "src/main/resources/drivers/chromedriver.exe");
+//        // Uruchom nowy egzemplarz przeglądarki Chrome
+//        driver = new ChromeDriver();
+//        // Zmaksymalizuj okno przeglądarki
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//    }
+//
+//    @After
+//    public void close() {
+//        driver.quit();
+//    }
+
+    @Given("user is on the hotel-testlab website")
+    public void userIsOnTheHotelTestlabWebsite() {
         // Skonfiguruj sterownik przeglądarki
         System.setProperty("webdriver.chrome.driver",
                 "src/main/resources/drivers/chromedriver.exe");
@@ -29,15 +46,6 @@ public class HotelTestlabRegistration {
         // Zmaksymalizuj okno przeglądarki
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
-    @After
-    public void close() {
-        driver.quit();
-    }
-
-    @Given("user is on the hotel-testlab website")
-    public void userIsOnTheHotelTestlabWebsite() {
         driver.get("https://hotel-testlab.coderslab.pl/en/");
     }
 
