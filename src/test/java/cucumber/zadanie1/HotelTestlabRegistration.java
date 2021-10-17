@@ -47,10 +47,11 @@ public class HotelTestlabRegistration {
         signInButton.click();
     }
 
-    @When("user inputs email address in Create an Account section")
-    public void userInputsEmailAddressInCreateAnAccountSection() {
+    @When("user inputs {string} address in Create an Account section")
+    public void userInputsEmailAddressInCreateAnAccountSection(String email) {
         WebElement registrationEmailInput = driver.findElement(By.id("email_create"));
-        registrationEmailInput.sendKeys(Utils.generateEmail());
+        registrationEmailInput.sendKeys(email);
+        //registrationEmailInput.sendKeys(Utils.generateEmail());
     }
 
     @And("user clicks Create an account button")
