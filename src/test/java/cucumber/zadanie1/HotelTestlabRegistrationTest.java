@@ -1,4 +1,4 @@
-package cucumber.wyklad;
+package cucumber.zadanie1;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/Cucumber/Features/google-text-search.feature",
+        features = "src/Cucumber/Features/hotel-testlab-register.feature",
         plugin = {"pretty", "html:target/cucumber-reports.html"}
 )
-public class GoogleSearchTest {
+public class HotelTestlabRegistrationTest {
 }
